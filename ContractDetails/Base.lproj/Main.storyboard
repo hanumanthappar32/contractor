@@ -38,8 +38,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vtq-In-bwm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1nD-Z3-znG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1nD-Z3-znG">
+                            <connections>
+                                <action selector="addDepartement:" destination="BYZ-38-t0r" id="QkW-Zq-Vjv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myTableview" destination="sVc-mH-Ydy" id="CLC-dc-h3Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
