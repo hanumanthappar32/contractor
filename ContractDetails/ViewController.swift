@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var myTableview: UITableView!
     var departements:[Departement] = []
     
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    //let context = delegate.managedObjectContext
     
     
 
@@ -67,6 +69,25 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
+    // delete row
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if(editingStyle == UITableViewCellEditingStyle.Delete){
+            let item = departements[indexPath.row]
+            departements.removeAtIndex(indexPath.row)
+            let context = delegate.managedObjectContext
+            context.deleteObject(item)
+            try! context.save()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    
     
     func saveDepartement(name:String){
         
