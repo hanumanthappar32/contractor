@@ -8,10 +8,11 @@
 
 import UIKit
 import CoreData
+
 class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var myTableview: UITableView!
-    var departements:[String] = []
+    var departements:[NSManagedObject] = []
     
     
     
@@ -41,10 +42,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = departements[indexPath.row]
+        let Departement = departements[indexPath.row]
+        cell.textLabel?.text = Departement.valueForKey("nameOfDepartement")as? String
+        
         return cell
     }
     
+    func saveNewDepartement(name:String){
+        
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = delegate.managedObjectContext
+        
+        
+        
+    }
 
     @IBAction func addDepartement(sender: AnyObject) {
         
@@ -52,7 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let save = UIAlertAction (title: "Save", style: .Default) {
             (action:UIAlertAction) -> Void in
             let textField = alert.textFields![0] as UITextField
-            self.departements.append(textField.text!)
+            self.saveDepartement(textField.text)
             self.myTableview.reloadData()
         }
         
