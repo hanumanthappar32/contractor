@@ -116,6 +116,16 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         
     }
+    func nilInputAlert() {
+        let title = "Alert"
+        let message = "You have not typed anything"
+        let okTest = "OK"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okButton = UIAlertAction(title: okTest, style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(okButton)
+        presentViewController(alert, animated: true, completion: nil)
+    }
 
     @IBAction func addDepartement(sender: AnyObject) {
         
@@ -123,10 +133,13 @@ class ViewController: UIViewController, UITableViewDataSource {
         let save = UIAlertAction (title: "Save", style: .Default) {
             (action:UIAlertAction) -> Void in
             let textField = alert.textFields![0] as UITextField
+            if (textField.text != ""){
             self.saveDepartement(textField.text!)
+            }else {
+                self.nilInputAlert()
+            }
             self.myTableview.reloadData()
         }
-        
         let cancel = UIAlertAction (title: "Cancel", style: .Default) {
             (action:UIAlertAction) -> Void in
         }
@@ -135,6 +148,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         alert.addAction(save)
         alert.addAction(cancel)
+        
         presentViewController(alert, animated: true, completion: nil)
 
     }
