@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hY0-4y-nLc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ecd-AC-zVg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -28,10 +29,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ecd-AC-zVg" kind="show" identifier="data" id="lWI-vA-eC5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Cv8-75-Q95"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Z4j-fM-wsl"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -56,7 +61,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="-483"/>
+            <point key="canvasLocation" x="910" y="-915"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="5zL-8g-fYW">
+            <objects>
+                <viewController id="ecd-AC-zVg" customClass="EditViewController" customModule="ContractDetails" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hz1-AC-EbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="5cR-QY-EKY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TAY-6F-yfS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name Of Departement:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2M-8y-oah">
+                                <rect key="frame" x="20" y="90" width="186" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="Name Of Departement :"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SF8-mq-8VT">
+                                <rect key="frame" x="20" y="128" width="303" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ru3-sU-ETD">
+                                <rect key="frame" x="154" y="179" width="52" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuI-x5-6GX">
+                                <rect key="frame" x="45" y="179" width="46" height="30"/>
+                                <state key="normal" title="OK"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCj-7q-dB4">
+                                <rect key="frame" x="262" y="179" width="46" height="30"/>
+                                <state key="normal" title="Edit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g2M-8y-oah" firstAttribute="top" secondItem="hz1-AC-EbK" secondAttribute="bottom" constant="26" id="cGX-Tb-QNp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SF8-mq-8VT" secondAttribute="trailing" constant="20" id="gNQ-ei-kuC"/>
+                            <constraint firstItem="g2M-8y-oah" firstAttribute="leading" secondItem="TAY-6F-yfS" secondAttribute="leadingMargin" constant="10" id="gfA-7F-M1j"/>
+                            <constraint firstItem="SF8-mq-8VT" firstAttribute="leading" secondItem="TAY-6F-yfS" secondAttribute="leadingMargin" constant="10" id="lcX-VB-pdl"/>
+                            <constraint firstItem="SF8-mq-8VT" firstAttribute="top" secondItem="g2M-8y-oah" secondAttribute="bottom" constant="8" id="pZU-Th-hcU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhh-yk-3xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="-251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xp9-db-5ua">
@@ -74,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMb-nY-blz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="-331"/>
+            <point key="canvasLocation" x="285" y="-915"/>
         </scene>
     </scenes>
 </document>

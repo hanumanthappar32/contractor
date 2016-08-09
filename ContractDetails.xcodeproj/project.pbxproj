@@ -15,6 +15,7 @@
 		CD7B81981D59A21B0045153E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7B81961D59A21B0045153E /* LaunchScreen.storyboard */; };
 		CD7B81A11D59D4630045153E /* Departement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B819F1D59D4630045153E /* Departement+CoreDataProperties.swift */; };
 		CD7B81A21D59D4630045153E /* Departement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B81A01D59D4630045153E /* Departement.swift */; };
+		CD7B81A61D5A536B0045153E /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B81A51D5A536B0045153E /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CD7B81991D59A21B0045153E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7B819F1D59D4630045153E /* Departement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Departement+CoreDataProperties.swift"; path = "../Departement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CD7B81A01D59D4630045153E /* Departement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Departement.swift; path = ../Departement.swift; sourceTree = "<group>"; };
+		CD7B81A51D5A536B0045153E /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				CD7B819F1D59D4630045153E /* Departement+CoreDataProperties.swift */,
 				CD7B81A01D59D4630045153E /* Departement.swift */,
 				CD7B818E1D59A21B0045153E /* Main.storyboard */,
+				CD7B81A51D5A536B0045153E /* EditViewController.swift */,
 				CD7B81941D59A21B0045153E /* Assets.xcassets */,
 				CD7B81961D59A21B0045153E /* LaunchScreen.storyboard */,
 				CD7B81991D59A21B0045153E /* Info.plist */,
@@ -146,6 +149,7 @@
 			files = (
 				CD7B81931D59A21B0045153E /* ContractDetails.xcdatamodeld in Sources */,
 				CD7B818D1D59A21B0045153E /* ViewController.swift in Sources */,
+				CD7B81A61D5A536B0045153E /* EditViewController.swift in Sources */,
 				CD7B81A21D59D4630045153E /* Departement.swift in Sources */,
 				CD7B818B1D59A21B0045153E /* AppDelegate.swift in Sources */,
 				CD7B81A11D59D4630045153E /* Departement+CoreDataProperties.swift in Sources */,
