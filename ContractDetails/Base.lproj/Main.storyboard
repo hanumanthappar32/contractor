@@ -34,7 +34,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vtq-In-bwm"/>
+                    <navigationItem key="navigationItem" id="vtq-In-bwm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1nD-Z3-znG"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
