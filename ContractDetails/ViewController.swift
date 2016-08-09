@@ -12,7 +12,7 @@ import CoreData
 class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var myTableview: UITableView!
-    var departements:[NSManagedObject] = []
+    var departements:[Departement] = []
     
     
     
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         var err : NSError?
         
         do {
-            departements = try context.executeFetchRequest(request) as! [NSManagedObject]
+            departements = try context.executeFetchRequest(request) as! [Departement]
             
             //self.departements.append(departement)
             
@@ -62,8 +62,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let Departement = departements[indexPath.row]
-        cell.textLabel?.text = Departement.valueForKey("nameOfDepartement")as? String
+    
+        cell.textLabel?.text = departements[indexPath.row].nameOfDepartement
         
         return cell
     }
@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = delegate.managedObjectContext
         
-        let departement = NSEntityDescription.insertNewObjectForEntityForName("Departement", inManagedObjectContext: context)
+        let departement = NSEntityDescription.insertNewObjectForEntityForName("Departement", inManagedObjectContext: context)as! Departement
         departement.setValue(name, forKey: "nameOfDepartement")
         
         var err : NSError?
