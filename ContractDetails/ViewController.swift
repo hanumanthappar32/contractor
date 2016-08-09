@@ -25,6 +25,26 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         myTableview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = delegate.managedObjectContext
+        
+        let request = NSFetchRequest(entityName: "Departement")
+        
+        var err : NSError?
+        
+        do {
+            departements = try context.executeFetchRequest(request) as! [NSManagedObject]
+            
+            //self.departements.append(departement)
+            
+            
+        }catch let err1 as NSError {
+            err = err1
+            
+        }
+        if(err != nil){
+            print("problem with loading data")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,10 +68,29 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
-    func saveNewDepartement(name:String){
+    func saveDepartement(name:String){
         
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context = delegate.managedObjectContext
+        
+        let departement = NSEntityDescription.insertNewObjectForEntityForName("Departement", inManagedObjectContext: context)
+        departement.setValue(name, forKey: "nameOfDepartement")
+        
+        var err : NSError?
+        
+        do {
+            try context.save()
+            
+            self.departements.append(departement)
+            
+            
+        }catch let err1 as NSError {
+            err = err1
+            
+        }
+        if(err != nil){
+            print("problem with saving data")
+        }
         
         
         
@@ -63,7 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let save = UIAlertAction (title: "Save", style: .Default) {
             (action:UIAlertAction) -> Void in
             let textField = alert.textFields![0] as UITextField
-            self.saveDepartement(textField.text)
+            self.saveDepartement(textField.text!)
             self.myTableview.reloadData()
         }
         
