@@ -23,6 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        
         title = "Departements"
         
         myTableview.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -89,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        <#code#>
+        self.performSegueWithIdentifier("data", sender: nil)
     }
 
     

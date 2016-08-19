@@ -17,6 +17,9 @@ class EditViewController: UIViewController {
     @IBOutlet weak var editbutton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        okbutton.hidden = true
+        cancelbutton.hidden = true
 
         // Do any additional setup after loading the view.
     }
