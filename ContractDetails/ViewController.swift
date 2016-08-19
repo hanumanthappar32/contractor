@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var myTableview: UITableView!
     var departements:[Departement] = []
@@ -74,6 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
+        
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -87,7 +88,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        <#code#>
+    }
+
     
     func saveDepartement(name:String){
         
@@ -150,8 +154,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         alert.addAction(cancel)
         
         presentViewController(alert, animated: true, completion: nil)
+        
 
     }
-
+    
+    
+    
 }
 

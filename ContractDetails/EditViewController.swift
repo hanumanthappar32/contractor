@@ -10,6 +10,11 @@ import UIKit
 
 class EditViewController: UIViewController {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var cancelbutton: UIButton!
+    @IBOutlet weak var textinputbox: UITextField!
+    @IBOutlet weak var okbutton: UIButton!
+    @IBOutlet weak var editbutton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +26,12 @@ class EditViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelPressed(sender: AnyObject) {
     }
-    */
 
+    @IBAction func okPressed(sender: AnyObject) {
+    }
+   
+    @IBAction func editPressed(sender: AnyObject) {
+    }
 }
